@@ -1,0 +1,12 @@
+---
+ interface Props {
+    img: string,
+    alt: string,
+ }
+ const { img, alt } = Astro.props;
+---
+<article class="flex flex-col place-content-center w-max p-4 hover:bg-base-300 bg-base-200 rounded-lg shadow-lg hover:-translate-y-1 hover:scale-110 transform ease-linear duration-150">
+    <figure class="mx-auto">
+        <img class="w-14 sm:w-20 h-14 sm:h-20" src={img} alt={alt} />
+    </figure>
+</article>

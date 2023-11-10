@@ -1,0 +1,44 @@
+---
+const Links = [
+	{
+		title: "Inicio",
+		route: "./#inicio"
+	},{
+		title: "Tecnologías",
+		route: "./#tecnologias"
+	},{
+		title: "Proyectos",
+		route: "./#proyectos"
+	}
+]                                     
+---
+
+<nav class="navbar bg-transparent fixed">
+	<section class="navbar-start">
+	  <a href="./#inicio" class="btn btn-ghost normal-case text-xl">Luis López</a>
+	</section>
+	<section class="navbar-end">
+		<section class="hidden lg:flex">
+			<ul class="menu menu-horizontal px-1">
+				{
+					Links.map((item) => 
+						<li><a class="font-bold" href={item.route}>{item.title}</a></li>
+					)
+				}
+			</ul>
+		</section>
+		
+		<section class="dropdown dropdown-end">
+			<label tabindex="0" class="btn btn-ghost lg:hidden">
+				<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+			</label>
+			<ul class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+				{
+					Links.map((item) => 
+						<li><a class="font-bold" href={item.route}>{item.title}</a></li>
+					)
+				}
+			</ul>
+		</section>	
+	</section>
+  </nav>
